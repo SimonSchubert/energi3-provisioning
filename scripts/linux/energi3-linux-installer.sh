@@ -1181,7 +1181,7 @@ _copy_keystore() {
       then
         chown -R "${USRNAME}":"${USRNAME}" "${CONF_DIR}"
       fi
-      chmod 600 "${CONF_DIR}/keystore/UTC*"
+      chmod 600 ${CONF_DIR}/keystore/UTC*
     fi
   done
 
