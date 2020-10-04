@@ -1169,21 +1169,6 @@ _copy_keystore() {
   sleep .3
   echo
   REPLY=''
-  while [[ -z "${REPLY}" ]] || [[ "$( echo "${REPLY}" | grep -c 'https://send.firefox.com/download/' )" -eq 0 ]]
-  do
-    read -p "Paste URL (leave blank and hit ENTER to do it manually): " -r
-    if [[ -z "${REPLY}" ]]
-    then      
-      echo "Please copy the keystore file to ${CONF_DIR}/keystore directory on your own using"
-      echo "an sftp software WSFTP or "
-      read -p "Press Enter Once Done: " -r
-      if [[ ${EUID} = 0 ]]
-      then
-        chown -R "${USRNAME}":"${USRNAME}" "${CONF_DIR}"
-      fi
-      chmod 600 ${CONF_DIR}/keystore/UTC*
-    fi
-  done
 
   while :
   do
